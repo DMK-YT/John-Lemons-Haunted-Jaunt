@@ -320,7 +320,6 @@ GameObject:
   m_Component:
   - component: {fileID: 778446452}
   - component: {fileID: 778446451}
-  - component: {fileID: 778446450}
   - component: {fileID: 778446449}
   m_Layer: 0
   m_Name: Main Camera
@@ -373,14 +372,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!81 &778446450
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778446448}
-  m_Enabled: 1
 --- !u!20 &778446451
 Camera:
   m_ObjectHideFlags: 0
@@ -1069,7 +1060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeDuration: 1
   displayImageDuration: 1
-  player: {fileID: 0}
+  player: {fileID: 3082972693740504447, guid: 63cd4e2764d020d44b60e9ff0f34df18, type: 3}
   exitBackgroundImageCanvasGroup: {fileID: 1265679650}
   exitAudio: {fileID: 1285697449}
   caughtBackgroundImageCanvasGroup: {fileID: 0}
