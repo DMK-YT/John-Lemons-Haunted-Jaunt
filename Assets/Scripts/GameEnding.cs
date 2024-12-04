@@ -12,9 +12,13 @@ public class GameEnding : MonoBehaviour
     public AudioSource exitAudio;
     public CanvasGroup caughtBackgroundImageCanvasGroup;
     public AudioSource caughtAudio;
+    public CanvasGroup timerBackgroundImageCanvasGroup;
+    public AudioSource timerAudio;
 
     bool m_IsPlayerAtExit;
     bool m_IsPlayerCaught;
+    bool m_IsTimerUp;
+
     float m_Timer;
     bool m_HasAudioPlayed;
 
@@ -30,6 +34,10 @@ public class GameEnding : MonoBehaviour
     {
         m_IsPlayerCaught = true;
     }
+    public void TimeUp()
+    {
+        m_IsTimerUp = true;
+    }
 
     void Update()
     {
@@ -41,10 +49,16 @@ public class GameEnding : MonoBehaviour
         {
             EndLevel(caughtBackgroundImageCanvasGroup, true, caughtAudio);
         }
+        else if (m_IsTimerUp) 
+        {
+            EndLevel(timerBackgroundImageCanvasGroup, true, timerAudio);
+        }
     }
 
     void EndLevel(CanvasGroup imageCanvasGroup, bool doRestart, AudioSource audioSource)
     {
+        PlayerMovement.SetCanMove(false);
+
         if (!m_HasAudioPlayed)
         {
             audioSource.Play();
